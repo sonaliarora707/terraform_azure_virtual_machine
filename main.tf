@@ -1,6 +1,11 @@
 provider   "azurerm"   { 
    version   =   "= 2.0.0" 
-   features   {} 
+   features   {
+      api_management {
+      purge_soft_delete_on_destroy = true
+      recover_soft_deleted         = true
+    }
+   } 
  } 
 
  resource   "azurerm_resource_group"   "rg"   { 
